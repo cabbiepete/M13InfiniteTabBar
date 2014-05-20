@@ -2,17 +2,19 @@
 
 M13InfiniteTabBar
 =============
-M13InfiniteTabBar is an elegant replacement for UITabBar. UITabBar becomes a problem when you have more than five view controllers that have the need to be accessed an equal amount of times. It maskes no sense to hide any of the tabs away under the "More" tab. Plus it takes two extra clicks to reach the view controllers behind the "More" button. M13InfiniteTabBar solves this problem by having all the view controllers on a single level. The "extra" view controllers can be reached by scrolling the tab bar left or right. The scrolling does pose a problem though, in which direction is my offscreen tab? M13InfiniteTabBar solves this by putting the tabs in an infinite scrolling loop. Any tab can be reached by scrolling in any direction. M13InfiniteTabBar also has a few other features that UITabBar doesn't offer on top of that.
+M13InfiniteTabBar is an elegant replacement for UITabBar. UITabBar becomes a problem when you have more than five view controllers that have the need to be accessed an equal amount of times. It maskes no sense to hide any of the tabs away under the "More" tab, as it takes two extra clicks to reach those view controllers. M13InfiniteTabBar solves this problem by having all the view controllers on a single level. The "extra" view controllers can be reached by scrolling the tab bar left or right. The scrolling does pose a problem though, in which direction is my offscreen tab? M13InfiniteTabBar solves this by putting the tabs in an infinite scrolling loop. Any tab can be reached by scrolling in any direction. M13InfiniteTabBar also has a few other features that UITabBar doesn't offer on top of that.
 
 <img src="https://raw.github.com/Marxon13/M13InfiniteTabBar/master/ReadmeResources/Screenshot.png" width="300px">
 
 Features:
 -----------
-* Simple to setup; it has a single initialization method, which is passed the UIViewControllers that will be displayed along with their tabs.
+* Simple to setup; It can be setup programitically via a single initialization method, which is passed the UIViewControllers that will be displayed along with their tabs. Or, a single delegate method if using storyboards.
 * All the colors and icons can be customized to match any application theme. Most properties follow the UIAppearance protocol.
 * All the delegate methods work just like the UITabBarControllerDelegate methods. Allowing easy delegate implementation. 
 * Handles device rotation in a unique way. The tab bar is sticky to the side of the screen with the home button. When the device is rotated, the view controller and the tab bar icons rotate to the new orientation, the tab bar stays locked in position. Rotation for each view controller is handled separatly. Each view controller can have its own set of allowed orientations; unlike UITabBar, where the view controllers either need to allow all orientations, or use only one orientation.
 * Allows user attention to be directed to a specific tab, A tab that requires user attention will change color, and if offscreen the tab bar will show an animation to direct the user's attention to scroll to that tab.
+* The tab bar, if it contains more tabs than what can fit on screen (5 for iPhone and 14 for iPad), will be come infinitly scrolling. If all the tabs can fit on screen, it will act like a normal tab bar.
+* It is also possible to turn of infinite scrolling. The tab bar will only show one set of tabs, and will still scroll, but their will be boundaries to the scrolling.
 
 ***Tap To Change Tabs***
 
@@ -81,11 +83,6 @@ These features will eventually be added to M13InfiniteTabBar:
 
 * Adding badges to tab bar items.
 * Allow switching the order, adding, and removing of tabs.
-
-Known Issues:
---------------
-* Scrolling problems when the tab bar is contained within a UINavigationController.
-* The selection triangle not consistantly appearing over the tab bar when the tabs root view are UINavigationControllers.
 
 
 Contact Me:

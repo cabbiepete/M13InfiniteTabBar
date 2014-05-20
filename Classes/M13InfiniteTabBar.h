@@ -62,6 +62,12 @@
 /** @name Selection */
 /** The `M13InfiniteTabBarItem` that is selected. */
 @property (nonatomic, retain) M13InfiniteTabBarItem *selectedItem;
+/**
+ Selects the item at the given index.
+ 
+ @param index The index of the item to select.
+ */
+- (void)selectItemAtIndex:(NSUInteger)index;
 
 /** @name User Attention*/
 /** Set wether or not a specific tab requires user attention.
@@ -73,5 +79,11 @@
 /** Method to rotate all the items on the tab bar to the given orientation.
  @param orientation     The orientation the tab bar items shoulb be rotated to. */
 - (void)rotateItemsToOrientation:(UIDeviceOrientation)orientation;
+/**The number minimum number of items before the infinite scrolling animation occurs. If the number of items is less than this number, then the tab bar acts like a normal tab bar.*/
+@property (nonatomic, assign) NSInteger minimumNumberOfTabsForScrolling;
+/**
+ If set to YES, and the number of tabs is greater than minimumNumberOfTabsForScrolling, the tab bar will scroll infinitly. If set to no, the tab bar will still scroll, but not scroll infinitly.
+ */
+@property (nonatomic, assign) BOOL enableInfiniteScrolling;
 
 @end
